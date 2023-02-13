@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>新規登録</h1>
+    <!-- 登録処理のHTTPメソッドはPOSTにします -->
+    <form th:action="@{/create}" th:object="${user}" method="post">
+        <div>
+            <label>名前</label>
+        </div>
+        <div>
+            <!-- 商品名はtext入力にします、th:field属性の値は*{フィールド名}です -->
+            <input type="text" th:field="*{name}" placeholder="例）山田　太郎" required>
+        </div>
+        <div>
+            <label>メールアドレス</label>
+        </div>
+        <div>
+            <!-- 価格はnumber入力にします -->
+            <input type="email" th:field="*{email}" placeholder="***@example.com" required>
+        </div>
+        <div>
+            <label>パスワード</label>
+        </div>
+        <div>
+            <!-- 価格はnumber入力にします -->
+            <input type="password" th:field="*{password}" required>
+        </div>
+        <div>
+         <input type="submit" name="send" value="登録する">
+        </div>
+</body>
+</html>
